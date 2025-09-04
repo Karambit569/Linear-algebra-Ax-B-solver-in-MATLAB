@@ -1,25 +1,22 @@
 function invA = cofactor_inv(A, tol)
-    % 행렬 크기 확인
+    % Matrix size
     [n, ~] = size(A);
     
-    % 행렬식 계산 tol 검사
+    %  tol examination
     detA = det(A);
     if abs(detA) < tol
-        error('Singular matrix: |det(A)| = %.2e < tol. 역행렬이 존재하지 않습니다.', detA);
+        error('Singular matrix: |det(A)| = %.2e < tol. Doesn't exist.', detA);
     end
     
-    % 여인수 행렬 초기화
     C = zeros(n);
 
-    % 여인수 계산
     for i = 1:n
         for j = 1:n
-            % 소행렬 생성
+           
             minor = A;
             minor(i,:) = [];
             minor(:,j) = [];
             
-            % 여인수 행렬 원소 계산
             C(i,j) = (-1)^(i+j) * det(minor);
         end
     end
