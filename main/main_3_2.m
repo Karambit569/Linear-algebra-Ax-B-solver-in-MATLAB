@@ -8,8 +8,8 @@ function main_3_2()
     end
     A = A';  % A: 20x20
 
-    %loading output
-    load('output.mat');      % output 벡터는 20x1
+    %loading output (Manually add)
+    load('output.mat');      % output vector is 20x1
 
     tol = 1e-40;
 
@@ -21,7 +21,7 @@ function main_3_2()
 
     % Cofactor
     tic;
-    invA = cofactor_inv(A, tol);   %Cofactor역행렬
+    invA = cofactor_inv(A, tol);   
     x2 = invA * output;
     t2 = toc;
 
