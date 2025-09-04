@@ -35,7 +35,7 @@ function main_3_1()
     disp('--- Cofactor ---');
     disp(x4);
 
-    fprintf('=== 해 비교 요약 ===\n');
+    fprintf('=== Compare Summary ===\n');
     fprintf('LU        : %0.6f s\n', t1);
     fprintf('Gauss     : %0.6f s\n', t2);
     fprintf('inv()     : %0.6f s\n', t3);
