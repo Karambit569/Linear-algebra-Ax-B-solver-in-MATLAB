@@ -1,0 +1,36 @@
+# Ignore MATLAB autosave and backup files
+*.asv
+*.m~ 
+*.fig~
+*.mdl~
+
+# Ignore MATLAB crash logs
+matlab_crash_dump.*
+*.dmp
+
+# Ignore Simulink cache/derived files
+slprj/
+sccprj/
+*.slxc
+
+# Ignore compiled MEX files (platform-dependent binaries)
+*.mex*
+*.dll
+*.so
+*.dylib
+
+# Ignore output and cache directories
+*.log
+*.tmp
+*.bak
+*.autosave
+
+# Ignore user-specific MATLAB settings
+*.prj
+*.mat  # (if you want to exclude saved workspace data files)
+*.p    # (protected MATLAB files)
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
