@@ -1,5 +1,5 @@
 function main_3_2()
-    % Signal matrix A 구성
+    % Signal matrix A
     t = 0.01:0.01:0.2;       % 20 time samples
     freq = 11:30;            % 20 frequencies
     A = zeros(20);
@@ -8,29 +8,29 @@ function main_3_2()
     end
     A = A';  % A: 20x20
 
-    % output 불러오기
+    %loading output
     load('output.mat');      % output 벡터는 20x1
 
     tol = 1e-40;
 
-    %LU 분해 및 해 계산
+    %LU factorization
     tic;
     [L, U] = slu(A, tol);    % LU
     x1 = slv(L, U, output);  % Forward + Backward Substitution
     t1 = toc;
 
-    % Cofactor 역행렬
+    % Cofactor
     tic;
     invA = cofactor_inv(A, tol);   %Cofactor역행렬
     x2 = invA * output;
     t2 = toc;
 
-    % MATLAB 내장 inv() 
+    % MATLAB inv() 
     tic;
     x3 = inv(A) * output;
     t3 = toc;
 
-    %결과
+    %result
     disp('--- Absorption Rates ---');
     fprintf('\n[1] LU (slu + slv):\n');     disp(x1);
     fprintf('\n[2] Cofactor Inverse:\n');   disp(x2);
